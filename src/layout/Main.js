@@ -15,7 +15,7 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${this.API_KEY}&s=matrix`)
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=${this.API_KEY}&s=matrix`)
       .then((response) => response.json())
       .then((data) => this.setState({ movies: data.Search, loading: false }));
   }
@@ -23,7 +23,7 @@ class Main extends Component {
   searchMovie = (str, type = "all") => {
     this.setState({ loading: false });
     fetch(
-      `http://www.omdbapi.com/?i=tt3896198&apikey=${this.API_KEY}&s=${str}${
+      `https://www.omdbapi.com/?i=tt3896198&apikey=${this.API_KEY}&s=${str}${
         type !== "all" ? `&type=${type}` : ""
       }`
     )
